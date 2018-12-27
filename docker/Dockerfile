@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install -y \
 RUN curl -sL https://deb.nodesource.com/setup_10.x | sudo bash -
 RUN apt-get update && apt-get install -y nodejs
 
-RUN npm install -g npm@6.4.0
+RUN npm install -g npm@6.5.0
 
 # Copy source files over
 RUN mkdir /portal
