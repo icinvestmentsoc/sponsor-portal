@@ -34,7 +34,11 @@ h1, h2, h3, h4 {
 }
 
 .header{
-  background-color: #225590;
+  /*background-color: #225590;*/
+  background-image: url("/assets/images/icis-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   color: white;
 }
 
@@ -55,6 +59,13 @@ textarea {
   resize: none;
 }
 /* === LOGIN === */
+
+.login-bg{
+  background-image: url("/assets/images/icis-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
 
 .login{
   background-color: #225590;
