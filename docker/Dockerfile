@@ -14,6 +14,7 @@ RUN npm install -g npm@6.4.0
 RUN mkdir /portal
 COPY ./src /portal/src
 COPY ./package.json /portal/package.json
+COPY ./package-lock.json /portal/package-lock.json
 COPY ./app.js /portal/app.js
 COPY ./auth /portal/auth
 COPY ./static /portal/static
