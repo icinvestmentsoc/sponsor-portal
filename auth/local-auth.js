@@ -1,7 +1,7 @@
 'use strict'
 const fs = require('fs')
 const logger = require('../src/logger.js')
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 
 exports.authSponsor = (user, pass, db, session, callback) => {
   db.Sponsor.find({

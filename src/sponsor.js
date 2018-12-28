@@ -3,7 +3,7 @@ const fs = require('fs-extra')
 const zipFolder = require('zip-folder')
 const logger = require('./logger.js')
 const args = require('args-parser')(process.argv)
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const saltRounds = 10;
 
 var check = (req, res, callback) => {

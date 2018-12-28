@@ -2,7 +2,7 @@
 const fs = require('fs-extra')
 const logger = require('./logger.js')
 const sha256 = require('js-sha256').sha256
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const saltRounds = 10;
 const args = require('args-parser')(process.argv)
 

@@ -2,7 +2,7 @@
 // Setup Express App
 const setup = require('./src/setup.js')
 const fs = require('fs-extra')
-const bcrypt = require('bcrypt')
+const bcrypt = require('bcryptjs')
 const saltRounds = 10
 const args = require('args-parser')(process.argv)
 
