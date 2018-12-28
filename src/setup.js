@@ -7,7 +7,6 @@ const fs = require('fs')
 const logger = require('./logger.js')
 const Morgan = require('morgan')
 const args = require('args-parser')(process.argv)
-const config = require('./config.js')
 
 var mainsponsorpath
 if (args['dev']) {
@@ -25,7 +24,7 @@ if (args['dev']) {
     localDir: mainsponsorpath,
     deleteRemoved: false,
     s3Params: {
-      Bucket: "icdocsoc-sponsor-portal",
+      Bucket: "icis-sponsor-portal",
       Prefix: "sponsors/" 
     }
   }
@@ -61,7 +60,7 @@ app.use(express.json())
 
 // SESSION
 app.use(session({
-  secret: (config.doc) ? config.doc.sessions : "shhhhhhhhh",
+  secret: "shhhhhhhhh",
   resave: false,
   saveUninitialized: true
 }))

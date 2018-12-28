@@ -4,11 +4,6 @@ set -e
 # Source profile
 source ~/.profile
 
-# Decrypt Secrets Config
-sudo openssl enc -aes-256-cbc -md sha256 -d -in /portal/secrets.yml.enc -out /portal/secure/config.yml -k $KEY
-
-# Check if newer image available
-sudo docker pull icdocsoc/portal
 # Run service
 sudo docker stack deploy -c /portal/docker-compose.yml portal
 

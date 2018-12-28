@@ -2,7 +2,6 @@
 const mongoose = require('mongoose')
 const logger = require('./logger.js')
 const args = require('args-parser')(process.argv)
-const config = require('./config.js')
 
 // MONGOOSE
 if (args['dev']) {
@@ -10,10 +9,8 @@ if (args['dev']) {
     useNewUrlParser: true
   })
 } else {
-  mongoose.connect(config.doc.mongod.url + "?authSource=admin", {
-    useNewUrlParser: true,
-    user: config.doc.mongod.username,
-    pass: config.doc.mongod.password
+  mongoose.connect('mongodb://127.0.0.1:27017/portal', {
+    useNewUrlParser: true
   })
 }
 var db = mongoose.connection

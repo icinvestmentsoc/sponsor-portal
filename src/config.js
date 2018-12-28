@@ -5,7 +5,7 @@ const args = require('args-parser')(process.argv)
 
 var doc
 
-if (!args['dev']) {
+if (false) {
   // Get document, or throw exception on error
   try {
     logger.info('Trying to load secrets config...')
