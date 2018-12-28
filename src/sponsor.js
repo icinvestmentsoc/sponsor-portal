@@ -58,7 +58,7 @@ var uploadToS3 = (req, callback) => {
       localDir: mainsponsorpath + req.session.user + '/',
       deleteRemoved: true,
       s3Params: {
-        Bucket: "icdocsoc-sponsor-portal",
+        Bucket: "icis-sponsor-portal",
         Prefix: "sponsors/" + req.session.user + '/'
       },
     }
@@ -92,7 +92,7 @@ var downloadFromS3 = (req, callback) => {
       localDir: mainsponsorpath + req.session.user + '/',
       deleteRemoved: false,
       s3Params: {
-        Bucket: "icdocsoc-sponsor-portal",
+        Bucket: "icis-sponsor-portal",
         Prefix: "sponsors/" + req.session.user + '/'
       }
     }

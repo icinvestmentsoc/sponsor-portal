@@ -11,7 +11,7 @@
   "dependencies": {
     "archiver": "^3.0.0",
     "aws-sdk": "^2.382.0",
-    "bcrypt": "^3.0.0",
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "express-fileupload": "^0.4.0",
@@ -53,14 +53,5 @@
     "eslint-config-node": "^3.0.2",
     "eslint-config-promise": "^1.2.6",
     "eslint-config-standard": "^12.0.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/georgesoteriou/DocSoc-portal.git"
-  },
-  "bugs": {
-    "url": "https://github.com/georgesoteriou/DocSoc-portal/issues"
-  },
-  "homepage": "https://github.com/georgesoteriou/DocSoc-portal#readme",
-  "description": ""
+  }
 }

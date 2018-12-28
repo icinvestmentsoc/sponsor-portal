@@ -39,7 +39,7 @@ var uploadToS3 = (req, callback) => {
       localDir: "sponsors/" + req.params.sponsor + '/' + req.params.posname,
       deleteRemoved: true,
       s3Params: {
-        Bucket: "icdocsoc-sponsor-portal",
+        Bucket: "icis-sponsor-portal",
         Prefix: "sponsors/" + req.params.sponsor + '/' + req.params.posname
       },
     }
