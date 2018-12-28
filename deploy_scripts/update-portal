@@ -5,7 +5,7 @@ set -e
 source ~/.profile
 
 # Run service
-sudo docker stack deploy -c /portal/docker-compose.yml portal
+sudo docker stack deploy -c ~/portal/docker-compose.yml portal
 
 # Cleanup unused resources
 sudo docker image prune -a -f
