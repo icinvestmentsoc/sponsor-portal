@@ -45,7 +45,7 @@ var addlink = (url) => {
 
 var uploadToS3 = (req, callback) => {
   // UPLOAD TO S3 IF NOT DEV
-  if (!args['dev']) {
+  if (false) {
     const AWS = require('aws-sdk')
     const s3 = require('s3')
     var awsS3Client = new AWS.S3()
@@ -77,7 +77,7 @@ var uploadToS3 = (req, callback) => {
 }
 
 var downloadFromS3 = (req, callback) => {
-  if (!args['dev']) {
+  if (false) {
     if (!fs.existsSync(mainsponsorpath + req.session.user + '/')) {
       fs.mkdirSync(mainsponsorpath + req.session.user + '/')
     }

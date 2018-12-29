@@ -24,6 +24,7 @@ COPY ./views /portal/views
 WORKDIR /portal
 
 # Install dependencies
+RUN npm set progress=false
 RUN npm install
 
 # Start Service

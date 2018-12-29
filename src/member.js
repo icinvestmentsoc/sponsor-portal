@@ -26,7 +26,7 @@ if (args['dev']) {
 
 var uploadToS3 = (req, callback) => {
   // UPLOAD TO S3 IF NOT DEV
-  if (!args['dev']) {
+  if (false) {
     const AWS = require('aws-sdk')
     const s3 = require('s3')
     var awsS3Client = new AWS.S3()
