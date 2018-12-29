@@ -39,16 +39,16 @@ const authsamplepath = './auth/authsample.json'
 
 exports.authUser = (user, pass, session, callback) => {
   var auth = fs.readFileSync(authsamplepath)
-  var data = JSON.parse(auth).find(el => el.Login === 'samp01')
+  var data = JSON.parse(auth).find(el => el.Login === 'test18')
   if (data) {
     // VALID USER
-    logger.info('User samp01 successfully logged in')
+    logger.info('User test18 successfully logged in')
     // setup session
     session.docsoc = false
     session.login = true
     session.type = 'member'
     session.data = data
-    session.user = 'samp01'
+    session.user = 'test18'
     // make folder
     callback(true)
   } else {

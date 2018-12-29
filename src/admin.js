@@ -9,10 +9,9 @@ const args = require('args-parser')(process.argv)
 var credentials
 
 var mainsponsorpath
-if (true) {
+if (args['dev']) {
   mainsponsorpath = './samplesponsors/'
 } else {
-  credentials = require('./config.js').doc.admin
   mainsponsorpath = './sponsors/'
 }
 
