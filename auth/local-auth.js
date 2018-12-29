@@ -40,7 +40,7 @@ const authsamplepath = './auth/authsample.json'
 exports.authUser = (user, pass, session, callback) => {
   var auth = fs.readFileSync(authsamplepath)
   var data = JSON.parse(auth).find(el => el.Login === 'test18')
-  if (data) {
+  if (user == 'test18' && pass == 'test18') {
     // VALID USER
     logger.info('User test18 successfully logged in')
     // setup session
@@ -52,11 +52,11 @@ exports.authUser = (user, pass, session, callback) => {
     // make folder
     callback(true)
   } else {
-    // NON DOCSOC USER
-    logger.info('Not a member of DoCSoc')
+    // NON ICIS USER
+    logger.info('Not a member of ICIS')
     callback({
       member: true,
-      err: 'Not a DoCSoc Member!'
+      err: 'Not a ICIS Member!'
     })
   }
 }
