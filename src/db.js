@@ -9,7 +9,7 @@ if (args['dev']) {
     useNewUrlParser: true
   })
 } else {
-  mongoose.connect('mongodb://127.0.0.1:27017/portal', {
+  mongoose.connect('mongodb://0.0.0.0:27017/portal', {
     useNewUrlParser: true
   })
 }
