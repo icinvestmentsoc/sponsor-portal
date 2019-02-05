@@ -36,34 +36,49 @@ exports.authSponsor = (user, pass, db, session, callback) => {
 }
 
 exports.authUser = (user, pass, session, callback) => {
-  var options = {
+  var optionsAuth = {
     method: 'POST',
-    uri: 'https://auth.docsoc.co.uk/authorize',
+    uri: 'https://krb.docsoc.co.uk/',
     body: {
       "user": user,
       "pass": pass
     },
     json: true
   }
+  var optionsMember = {
+    method: 'GET',
+    uri: 'https://eactivities.union.ic.ac.uk/API/CSP/247/reports/members',
+    headers: {
+      'x-api-key': 'shhhhh'
+    },
+    json: true
+  }
 
-  rp(options).then(function (parsedBody) {
-    if (parsedBody.auth) {
-      if (parsedBody.membership) {
-        logger.info('User ' + user + ' successfully logged in')
-        // setup session
-        session.docsoc = false
-        session.login = true
-        session.type = 'member'
-        session.data = parsedBody.data
-        session.user = user
-        callback(true)
-      } else {
-        logger.info('User ' + user + ' not DoCSoc member')
+  rp(optionsAuth).then(function (pBodyAuth) {
+    if (pBodyAuth.auth) {
+      rp(optionsMember).then(function (pBodyMember) {
+        var memberData = pBodyMember.find(x => x.Login === user);
+        if (typeof memberData !== 'undefined') {
+          logger.info('User ' + user + ' successfully logged in')
+          session.docsoc = false
+          session.login = true
+          session.type = 'member'
+          session.data = memberData
+          session.user = user
+          callback(true)
+        } else {
+          logger.info('User ' + user + ' not ICIS member')
+          callback({
+            member: true,
+            err: 'Not a ICIS Member'
+          })
+        }
+      }).catch(function (err) {
         callback({
           member: true,
-          err: 'Not a DoCSoc Member'
+          err: 'Authentication server down. Try again later'
         })
-      }
+      })
     } else {
       logger.info('User ' + user + ' failed logged in')
       callback({

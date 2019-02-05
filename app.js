@@ -25,7 +25,7 @@ logger.info('[API Setup] done')
 // =========================Login Page=====================
 const login = require('./src/login.js')
 var auth
-if (true) { // If development version,
+if (args['dev']) { // If development version,
   auth = require('./auth/local-auth.js')
 } else {
   auth = require('./auth/auth.js')
